@@ -18,11 +18,12 @@ namespace GuessingGame
     /// Interaction logic for Window1.xaml
     /// </summary>
     public partial class Window1 : Window
-    {
+    {   //introduce some global variables for use later
         int guess = 0;
         int guesses = 0;
         int rGuesses = 5;
 
+        //instigate the random class
         Random R = new Random();
         public Window1()
         {
@@ -38,8 +39,10 @@ namespace GuessingGame
 
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
+            //generate a random number as an int32 element
+            int r = R.Next(1, 9);
+            //take the users guess and compare it to the random number
             guess = int.Parse(GuessBox.Text);
-            int r = Guessed(rnd);
             if (guess == r)
             {
                 Window2 window2 = new Window2();
@@ -49,18 +52,15 @@ namespace GuessingGame
             else { tryAgain(); }
             
         }
-
-        public static int Guessed(Random rnd)
-        {
-            return rnd.Next(1, 9);
-        }
-
+        
         private void tryAgain()
         {
+            //see how many guesses the user has left
             guesses += 1;
             rGuesses -= 1;
             NumGuessBox.Text = guesses.ToString();
             RGuessBox.Text = rGuesses.ToString();
+            //if all guesses have been used..
             if(rGuesses == 0)
             {
                 Window3 window3 = new Window3();
