@@ -25,6 +25,7 @@ namespace GuessingGame
 
         //instigate the random class
         Random R = new Random();
+        int r = 0;
         public Window1()
         {
             InitializeComponent();
@@ -40,7 +41,9 @@ namespace GuessingGame
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
             //generate a random number as an int32 element
-            int r = R.Next(1, 9);
+            if (r == 0)
+            { r = R.Next(1, 9); }
+            
             //take the users guess and compare it to the random number
             guess = int.Parse(GuessBox.Text);
             if (guess == r)
