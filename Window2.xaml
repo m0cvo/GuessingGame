@@ -1,0 +1,14 @@
+﻿<Window x:Class="GuessingGame.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessingGame"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <Grid Margin="10" Background="#FF07D6F7">
+        <Label Content="Well done you got it right!" HorizontalAlignment="Left" Margin="183,153,0,0" VerticalAlignment="Top" Height="114" Width="425" RenderTransformOrigin="0.498,0.44" FontSize="36"/>
+        <Button Content="Try again" HorizontalAlignment="Left" Margin="353,297,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="Button_Click"/>
+
+    </Grid>
+</Window>

@@ -19,6 +19,11 @@ namespace GuessingGame
     /// </summary>
     public partial class Window1 : Window
     {
+        int guess = 0;
+        int guesses = 0;
+        int rGuesses = 5;
+
+        Random R = new Random();
         public Window1()
         {
             InitializeComponent();
@@ -29,6 +34,46 @@ namespace GuessingGame
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
+        }
+
+        private void EnterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            guess = int.Parse(GuessBox.Text);
+            int r = Guessed(rnd);
+            if (guess == r)
+            {
+                Window2 window2 = new Window2();
+                window2.Show();
+                this.Close();
+            }
+            else { tryAgain(); }
+            
+        }
+
+        public static int Guessed(Random rnd)
+        {
+            return rnd.Next(1, 9);
+        }
+
+        private void tryAgain()
+        {
+            guesses += 1;
+            rGuesses -= 1;
+            NumGuessBox.Text = guesses.ToString();
+            RGuessBox.Text = rGuesses.ToString();
+            if(rGuesses == 0)
+            {
+                Window3 window3 = new Window3();
+                window3.Show();
+                this.Close();
+            }
+
+            else
+            {
+                GuessBox.Text = "";
+                Label1.Content = "Try Again!";
+            }
+            return;
         }
     }
 }

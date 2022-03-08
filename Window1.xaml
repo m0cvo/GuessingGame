@@ -8,11 +8,11 @@
         Title="Guessing Game" Height="450" Width="800">
     <Grid Margin="10" Background="#FF04F7EC">
         
-        <Label Content="Your guess:" HorizontalAlignment="Left" Margin="183,108,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="Label1" Content="Your guess:" HorizontalAlignment="Left" Margin="183,108,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="GuessBox" HorizontalAlignment="Left" Height="23" Margin="359,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.175,1.287" FontSize="16" BorderBrush="#FF0A0A0C"/>
         <Label Content="Number of guesses:" HorizontalAlignment="Left" Margin="183,174,0,0" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="NumGuessBox" HorizontalAlignment="Left" Height="23" Margin="359,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16" BorderBrush="#FF070708" IsReadOnlyCaretVisible="True"/>
-        <Button x:Name="EnterBtn" Content="Enter" HorizontalAlignment="Left" Margin="509,114,0,0" VerticalAlignment="Top" Width="75" FontSize="16"/>
+        <Button x:Name="EnterBtn" Content="Enter" HorizontalAlignment="Left" Margin="509,114,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Click="EnterBtn_Click"/>
         <Rectangle HorizontalAlignment="Left" Height="99" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="762">
             <Rectangle.Fill>
                 <RadialGradientBrush>
