@@ -43,6 +43,10 @@ namespace GuessingGame
             //generate a random number as an int32 element
             if (r == 0)
             { r = R.Next(1, 9); }
+
+            //Check that input is of correct format
+            bool isNumeric = int.TryParse(GuessBox.Text, out int n);
+            if(isNumeric == false) { MessageBox.Show("please enter a numerical integer value only!"); }
             
             //take the users guess and compare it to the random number
             guess = int.Parse(GuessBox.Text);
