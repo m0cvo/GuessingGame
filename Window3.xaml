@@ -12,7 +12,7 @@
         </Grid.Background>
         <Label Content="Sorry You Lost!" HorizontalAlignment="Left" Margin="331,345,0,0" VerticalAlignment="Top" Width="136" Background="{x:Null}" FontSize="16" FontWeight="Bold" Foreground="#FFF5F0F0"/>
         <Button Content="Start Again" HorizontalAlignment="Left" Margin="115,376,0,0" VerticalAlignment="Top" Width="100" FontSize="16" Click="Button_Click"/>
-        <Button Content="Exit" HorizontalAlignment="Left" Margin="591,376,0,0" VerticalAlignment="Top" Width="100" FontSize="16"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="591,376,0,0" VerticalAlignment="Top" Width="100" FontSize="16" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
