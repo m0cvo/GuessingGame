@@ -38,25 +38,43 @@ namespace GuessingGame
             this.Close();
         }
 
+        
         private void EnterBtn_Click(object sender, RoutedEventArgs e)
         {
-            //generate a random number as an int32 element
-            if (r == 0)
-            { r = R.Next(1, 9); }
-
-            //Check that input is of correct format
-            bool isNumeric = int.TryParse(GuessBox.Text, out int n);
-            if(isNumeric == false) { MessageBox.Show("please enter a numerical integer value only!"); }
-            
-            //take the users guess and compare it to the random number
-            guess = int.Parse(GuessBox.Text);
-            if (guess == r)
+            try
             {
-                Window2 window2 = new Window2();
-                window2.Show();
-                this.Close();
+                //generate a random number as an int32 element
+                if (r == 0)
+                { r = R.Next(1, 9); }
+
+                //Check that input is of correct format
+                bool isNumeric = int.TryParse(GuessBox.Text, out int n);
+                if (isNumeric == false)
+                {
+                    MessageBox.Show("please enter a numerical integer value only!");
+                    GuessBox.Text = "";
+                }
+                else
+                {
+                    //take the users guess and compare it to the random number
+                    guess = int.Parse(GuessBox.Text);
+                    if (guess == r)
+                    {
+                        Window2 window2 = new Window2();
+                        window2.Show();
+                        this.Close();
+                    }
+                    else { tryAgain(); }
+                }
             }
-            else { tryAgain(); }
+            catch (FormatException Fe)
+            {
+                MessageBox.Show("Numerical Integer between 1 and 9 please");
+            }
+            catch(IndexOutOfRangeException ie)
+            {
+                MessageBox.Show("between 1 and 9 only");
+            }
             
         }
         
