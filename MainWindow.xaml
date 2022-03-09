@@ -13,7 +13,7 @@
                 <GradientStop Color="#FFBEA5FF" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Label Content="Number Guessing Game" HorizontalAlignment="Center" Margin="237,48,224,0" VerticalAlignment="Top" FontSize="16" Width="331" Foreground="#FFCC03F9" FontWeight="Bold">
+        <Label Content="           Number Guessing Game" HorizontalAlignment="Center" Margin="237,48,224,0" VerticalAlignment="Top" FontSize="16" Width="331" Foreground="#FFCC03F9" FontWeight="Bold">
             <Label.Background>
                 <RadialGradientBrush>
                     <GradientStop Color="Black" Offset="1"/>
